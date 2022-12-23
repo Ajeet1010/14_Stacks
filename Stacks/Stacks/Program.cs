@@ -11,33 +11,63 @@ namespace Stacks
         static void Main(string[] args)
         {
             Console.WriteLine("Stacks Problem");
-            Console.WriteLine("Choose to perform:\n" +
-                " 1. Push\n2. Peek and Pop\n ");
-            Console.WriteLine("Enter the option");
-            int num = Convert.ToInt32(Console.ReadLine());
-            Stack stack = new Stack();
-            switch (num)
+            string flag = "Y";
+            while (flag == "Y" || flag == "y")
             {
-                case 1:
-                    stack.Push(70);
-                    stack.Push(30);
-                    stack.Push(56);
-                    stack.Display();
-                    break;
+                Console.WriteLine("Choose to perform:\n" +
+                " 1. Push\n2. Peek and Pop\n3. Queue\n ");
+                Console.WriteLine("Enter the option");
+                int num = Convert.ToInt32(Console.ReadLine());
+                Stack stack = new Stack();
+                switch (num)
+                {
+                    case 1:
+                        stack.Push(70);
+                        stack.Push(30);
+                        stack.Push(56);
+                        stack.Display();
+                        break;
 
-                case 2:
-                    stack.Push(70);
-                    stack.Push(30);
-                    stack.Push(56);
-                    stack.IsEmpty();
-                    stack.Pop();
-                    stack.Peek();
-                    stack.Display();
-                    break;
+                    case 2:
+                        stack.Push(70);
+                        stack.Push(30);
+                        stack.Push(56);
+                        stack.IsEmpty();
+                        stack.Pop();
+                        stack.Peek();
+                        stack.Display();
+                        break;
 
-                default:
-                    Console.WriteLine("Enter a valid option");
-                    break;
+                    case 3:
+                        string flag1 = "Y";
+                        while (flag1 == "Y" || flag1 == "y")
+                        {
+                            Console.WriteLine("1.Enqueue");
+                            Console.WriteLine("Enter the option");
+                            int num1 = Convert.ToInt32(Console.ReadLine());
+                            Queue queue = new Queue();
+                            switch (num1)
+                            {
+                                case 1:
+                                    queue.Enqueue(56);
+                                    queue.Enqueue(30);
+                                    queue.Enqueue(70);
+                                    queue.Display();
+                                    break;
+                                default:
+                                    Console.WriteLine("Enter a valid option");
+                                    break;
+                            }
+                            Console.WriteLine("\nDo you want to continue?(Y/N)");
+                            flag1 = Console.ReadLine();
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Enter a Valid Option!!!");
+                        break;
+                }
+                Console.WriteLine("\nDo you want to continue?(Y/N)");
+                flag = Console.ReadLine();
             }
             Console.ReadLine();
         }
